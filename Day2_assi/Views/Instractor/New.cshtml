@@ -1,0 +1,35 @@
+﻿@model Instractor
+    @{ 
+        SelectList deptList = new SelectList(ViewBag.Depts, "Id", "Name");
+        SelectList CourseList = new SelectList(ViewBag.Courses, "Id", "Name");
+    }
+    <h1>New</h1>
+    <form action="/Instractor/SaveNEw" method="post">
+        <div>
+            <label asp-for="Name">Instractor Name</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Salary">Salary</label>
+            <input asp-for="Salary" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Address">Address</label>
+            <input asp-for="Address" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Dept_ID">Dept_ID</label>
+            @*<input type="text" name="Dept_ID" id="Dept_ID" value="@Model.Dept_ID" class="form-control" />*@
+            <select class="form-control" asp-for="Dept_ID" asp-items="deptList">
+            </select>
+        </div>
+
+        <div>
+            <label asp-for="Course_ID">Course Name</label>
+            @*<input type="text" name="Dept_ID" id="Dept_ID" value="@Model.Dept_ID" class="form-control" />*@
+            <select class="form-control" asp-for="Course_ID" asp-items="CourseList">
+            </select>
+        </div>
+
+        <input type="submit" class="btn btn-success" value="Create" />
+    </form>

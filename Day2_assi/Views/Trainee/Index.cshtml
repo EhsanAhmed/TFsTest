@@ -1,0 +1,15 @@
+﻿@model TraineeListViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div >
+  Trainee Name:  @Model.TrianeeName <br />
+  Course Name:  @Model.CouresName <br />
+  Course Degree:  @Model.CoureDegree <br />
+  Course Statues:  <div  style="background-color:@Model.Color ; width 200px; height 200px";>
+    @Model.CourseState
+    </div>
+    
+</div>

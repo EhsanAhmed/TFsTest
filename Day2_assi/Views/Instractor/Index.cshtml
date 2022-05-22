@@ -1,0 +1,16 @@
+﻿@model List<Instractor>
+<h1>Index</h1>
+     @{ 
+         Layout = "_MyLayout";
+     }
+<table class="table table-hover table-bordered">
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Name</td>
+        <td><img src="/Image/@item.Image" style ="width:100px; height:100px" /></td>
+        <td><a href="/Instractor/Details/@item.Id">Get Details</a></td>
+    </tr>
+}
+</table>
+

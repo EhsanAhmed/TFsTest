@@ -1,0 +1,24 @@
+﻿@model List<CourseResultViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<h2>Course Name:@Model.FirstOrDefault().CourseName </h2>
+
+<table class="table table-hover table-bordered">
+    <tr>
+    <th>Student Name:</th>
+    <th>Student Degree: </th>
+    <th>Student Status:</th>
+  </tr>
+@foreach (var item in @Model)
+{
+   <tr>
+       <td>@item.StudentName </td>
+       <td>@item.Degree</td>
+       <td style="color: @item.Color"> @item.CourseStatus</td>
+   </tr> 
+}
+</table>
+

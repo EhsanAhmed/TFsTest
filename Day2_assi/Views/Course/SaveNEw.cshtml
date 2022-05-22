@@ -1,0 +1,14 @@
+﻿@model List<Course>
+
+<h1>Courses</h1>
+<table class="table table-hover table-bordered">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Degree</td>
+        </tr>
+    }
+</table>
+
+
